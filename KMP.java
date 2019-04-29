@@ -12,8 +12,10 @@ import java.util.Arrays;
 */
 public class KMP {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(getNext("joooj")));
-        System.out.println(getIndex("jahackjavjooojavaaaaaaaaaaaa", "joooj"));
+        String mainStr = "abcabdabdaaaaaa";
+        String sonStr =  "abdabda";
+        System.out.println(Arrays.toString(getNext(sonStr)));
+        System.out.println(getIndex(mainStr, sonStr));
     }
     
     //KPM算法获得匹配的下标
@@ -31,7 +33,7 @@ public class KMP {
             int j = 0;
             int[] next = getNext(shorter);              //根据编写的方法获取next数组
             while (i < longger.length()) {              //循环跳出条件是遍历到主串结尾,如果不匹配最后跳出返回-1
-                System.out.printf("主串:%s, 小串:%s\n", i, j);
+                System.out.printf("主串:%s, 子串:%s\n", i, j);
                 if (longger.charAt(i) == shorter.charAt(j)) {   //分别比对主串的i和子串的j是否相同, 相同则判断如果j为子串的最后一个索引,返回子串0处主串的索引
                     if (j == shorter.length() - 1) {
                         return i - shorter.length() + 1;
@@ -41,7 +43,7 @@ public class KMP {
                 } else {                                //主串的i和子串的j不相同则j回朔到next数组对应的索引
                     j = next[j];
                 }
-                if (j == 0) {                           //如果判断结束之后j的值为0,则无需继续判断,主串索引+1
+                if (j == 0 && shorter.charAt(j) != longger.charAt(i)) {         //如果判断结束之后j的值为0且ij对应字符不等,则无需继续判断,主串索引+1
                     i ++;
                 }
             }
