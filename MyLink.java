@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**  
 * @typename MyLink  
 * @author NFUE  
-* @Description: TODO(这里用一句话描述这个类的作用)
+* @Description: 双向循环链表
 * @date 2019年5月10日 上午9:11:07    
 * @Company https://github.com/cptbaker233
 *    
@@ -30,7 +30,7 @@ class Node<T> {
     public void setValue(T value) {
         this.value = value;
     }
-
+    
     public Node<T> getNext() {
         return next;
     }
