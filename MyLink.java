@@ -237,6 +237,11 @@ public class MyLink<T> implements Iterable<T> {
         return nd.getValue();
     }
     
+    public void set(int index, T ele) {
+        Node<T> nd = peek(index);
+        nd.setValue(ele);
+    }
+    
     @Override
     public String toString() {
         String res = "[ " + head.getValue() + ", ";
