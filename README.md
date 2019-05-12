@@ -1,6 +1,6 @@
 # Algorithms
 学习算法的练习代码  
-Absulute.java　　　　　　　　　求数据绝对值的  
+Absulute.java　　　　　　　　　求数据绝对值  
 IsPrime.java　　　　　　　　　判断整数是不是自然数  
 KMP.java　　　　　　　　　　　字符串KMP模式匹配算法  
 MyLink.java　　　　　　　　　手动实现的双向循环链表结构(add, remove, get, set等方法)  
